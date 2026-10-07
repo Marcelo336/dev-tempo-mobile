@@ -2,7 +2,7 @@
 
 # dependencies
 node_modules/
-
+.vscode/settings.json
 # Expo
 .expo/
 dist/
