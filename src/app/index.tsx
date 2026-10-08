@@ -2,9 +2,17 @@ import SearchBar from '@/components/SearchBar'
 import { homeStyles } from '@/styles/home.styles'
 import { View, Text, StatusBar, ScrollView } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import { useRouter } from 'expo-router'
 
 export default function App(){
+  const router = useRouter();
 
+  const handleSearch = (cityName: string) => {
+    router.push({
+      pathname: '/details',
+      params: { cityName }
+    })
+  }
   return(
 
     <SafeAreaView style={homeStyles.safeArea}>
@@ -16,7 +24,7 @@ export default function App(){
           <Text style={homeStyles.subtitle}>Busque o clima em qualquer cidade do mundo!</Text>      
         </View>
 
-        <SearchBar />
+        <SearchBar onSearch={handleSearch}/>
 
         <View style={homeStyles.emptyContainer}>
           <Text style={homeStyles.emptyText}>

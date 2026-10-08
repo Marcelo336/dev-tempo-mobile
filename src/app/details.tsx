@@ -1,17 +1,22 @@
 import { detailsStyles } from '@/styles/details.styles';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { ActivityIndicator, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
 export default function Details() {
+  const router = useRouter();
+  const { cityName } = useLocalSearchParams<{ cityName: string }>();
+
+  console.log(cityName); 
 
   return (
 
     <SafeAreaView style={detailsStyles.safeArea}>
       <StatusBar barStyle='dark-content'/>
       <ScrollView style={detailsStyles.container}>
-        
-        <TouchableOpacity style={detailsStyles.backButton}>
+
+        <TouchableOpacity style={detailsStyles.backButton} onPress={() => router.back()}>
           <Text style={detailsStyles.backButtonText}>
             ⬅ Voltar
           </Text>
@@ -19,7 +24,7 @@ export default function Details() {
 
         <View style={detailsStyles.header}>
           <Text style={detailsStyles.title}>Clima Atual</Text>
-          <Text style={detailsStyles.subtitle}>Buscando: nome da cidade</Text>
+          <Text style={detailsStyles.subtitle}>Buscando: {cityName}</Text>
         </View>
 
         <View style={detailsStyles.loadingContainer}>
