@@ -11,7 +11,8 @@ export const colors = {
   text: '#333333',
   textSecondary: '#666666',
   textLight: '#999999',
-
+  buttonText: '#FFFFFF',
+  
   // Status
   error: '#E74C3C',
   success: '#2ECC71',
@@ -50,5 +51,9 @@ export const typography = {
   small: {
     fontSize: 12,
     fontWeight: '400' as const,
+  },
+  button: {
+    fontSize: 18,
+    fontWeight: '600' as const,
   },
 };

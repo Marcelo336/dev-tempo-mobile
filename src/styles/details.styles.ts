@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { colors, spacing, typography } from './colors'
+import { colors, spacing, typography } from './colors';
 
 export const detailsStyles = StyleSheet.create({
   safeArea: {
@@ -50,5 +50,28 @@ export const detailsStyles = StyleSheet.create({
     ...typography.body,
     color: colors.textSecondary,
      marginTop: spacing.md
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: spacing.md
+  },
+  errorText: {
+    ...typography.body,
+    color: colors.error, // Cor de erro (vermelho, por exemplo)
+    textAlign: 'center',
+    marginBottom: spacing.md
+  },
+  retryButton: {
+    backgroundColor: colors.primary, // Cor de fundo do botão de tentar novamente
+    paddingVertical: spacing.sm,
+    paddingHorizontal: spacing.md,
+    borderRadius: spacing.sm
+  },
+  retryButtonText: {
+    ...typography.button, // Estilo de texto para botão
+    color: colors.buttonText, // Cor do texto do botão
+    fontWeight: 'bold'
   }
 })
