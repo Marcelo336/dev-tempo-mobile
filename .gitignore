@@ -1,41 +1,38 @@
-# Learn more https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files
-
-# dependencies
+# Dependency directories
 node_modules/
-.vscode/settings.json
-# Expo
-.expo/
-dist/
-web-build/
-expo-env.d.ts
 
-# Native
-.kotlin/
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
+# Environment variables
+.env                # Ignore the main .env file (CRITICAL!)
+.env*.local         # Ignore specific local environment files
 
-# Metro
-.metro-health-check*
+# Expo / React Native specific ignores
+.expo/              # Expo cache directory
+dist/               # Build output for web/standalone apps
+web-build/          # Web build output
+/ios                # Generated iOS project folder
+/android            # Generated Android project folder
+*.jks               # Java Keystore (Android signing)
+*.p8                # Apple Developer key
+*.p12               # Apple Developer certificate
+*.key               # Generic private key
+*.mobileprovision   # Apple iOS provisioning profile
+*.pem               # Private key certificates (can be used for various things)
+.kotlin/            # Kotlin specific build files, if any
 
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
+# VS Code
+.vscode/settings.json # Personal VS Code workspace settings
 
-# macOS
-.DS_Store
-*.pem
+# Temporary / Build artifacts
+*.orig.*            # Backup files
+.metro-health-check* # Metro bundler health check files
+npm-debug.*         # npm debug logs
+yarn-debug.*        # Yarn debug logs
+yarn-error.*        # Yarn error logs
+*.tsbuildinfo       # TypeScript build cache
 
-# local env files
-.env*.local
+# macOS specific
+.DS_Store           # macOS folder metadata
 
-# typescript
-*.tsbuildinfo
-
-# generated native folders
-/ios
-/android
+# Unused template files (as discussed earlier)
+AGENTS.md
+LICENSE
